@@ -23,7 +23,7 @@ def obtainDatas():
     }
     return datas
 
-def postDatasBitcoin():
+def postDatasGoogleSheets():
     url = os.environ["URL_GOOGLE_SHEETS"]
     print("url:",url)
     response = requests.post(url, data=obtainDatas())
@@ -44,7 +44,7 @@ def getDatasDoge():
     return request.json()[0]["last"]
 
 def main():
-    postDatasBitcoin()
+    postDatasGoogleSheets()
 
 schedule.every().day.at("09:00").do(main)  
 schedule.every().day.at("15:00").do(main)  
