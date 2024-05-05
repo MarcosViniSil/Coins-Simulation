@@ -52,5 +52,6 @@ schedule.every().day.at("21:00").do(main)
 
 
 while True:
+    postDatasGoogleSheets()
     schedule.run_pending()
     time.sleep(60) 
