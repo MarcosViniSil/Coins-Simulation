@@ -32,15 +32,15 @@ def postDatasGoogleSheets():
         print("Erro na requisição google sheets:", response.status_code)
 
 def getDatasBitcoin():
-    request = requests.get(f"https://api.mercadobitcoin.net/api/v4/tickers?symbols=BTC-BRL")
+    request = requests.get("https://api.mercadobitcoin.net/api/v4/tickers?symbols=BTC-BRL")
     return request.json()[0]["last"]
 
 def getDatasETH():
-    request = requests.get(f"https://api.mercadobitcoin.net/api/v4/tickers?symbols=ETH-BRL")
+    request = requests.get("https://api.mercadobitcoin.net/api/v4/tickers?symbols=ETH-BRL")
     return request.json()[0]["last"]
 
 def getDatasDoge():
-    request = requests.get(f"https://api.mercadobitcoin.net/api/v4/tickers?symbols=DOGE-BRL")
+    request = requests.get("https://api.mercadobitcoin.net/api/v4/tickers?symbols=DOGE-BRL")
     return request.json()[0]["last"]
 
 def main():
@@ -52,6 +52,5 @@ schedule.every().day.at("21:00").do(main)
 
 
 while True:
-    postDatasGoogleSheets()
     schedule.run_pending()
     time.sleep(60) 

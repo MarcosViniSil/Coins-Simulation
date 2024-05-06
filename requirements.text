@@ -1,4 +1,0 @@
-pip install schedule
-pip install dotenv
-pip install time
-pip install requests
